@@ -22,13 +22,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace TweetWrap.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         CoreApplicationViewTitleBar coreTitleBar;
@@ -38,15 +33,14 @@ namespace TweetWrap.Views
             this.InitializeComponent();
             this.SizeChanged += MainPage_SizeChanged;
             Model.PropertyChanged += Model_PropertyChanged;
-            var AppView = ApplicationView.GetForCurrentView();
             this.Loaded += MainPage_Loaded;
+            coreTitleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            Window.Current.SetTitleBar(mainTitleBar);
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            coreTitleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
-            Window.Current.SetTitleBar(mainTitleBar);
             ResizeWebView();
         }
 
@@ -89,6 +83,17 @@ namespace TweetWrap.Views
                 return new RelayCommand(() =>
                 {
                     MyWebView.Navigate(new Uri("https://tweetdeck.twitter.com"));
+                });
+            }
+        }
+
+        public ICommand About
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    await new MessageDialog("TweetWrap is a simple wrapper around the TweetDeck web site. This project is open source and accepting code contributions at https://github.com/billreiss/TweetWrap", "About TweetWrap").ShowAsync();
                 });
             }
         }

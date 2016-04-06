@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="4d565ff5-2e43-434a-b897-d790f9fe560d" Publisher="CN=bireis" Version="1.0.0.0" />
+  <Identity Name="9036BillReiss.TweetWrap" Publisher="CN=0A8B649E-441F-4AEC-850E-5FD345644FE2" Version="1.1.0.0" />
   <mp:PhoneIdentity PhoneProductId="4d565ff5-2e43-434a-b897-d790f9fe560d" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TweetWrap</DisplayName>
-    <PublisherDisplayName>bireis</PublisherDisplayName>
+    <PublisherDisplayName>Bill Reiss</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,8 +15,12 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TweetWrap.App">
-      <uap:VisualElements DisplayName="TweetWrap" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="TweetWrap" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+      <uap:VisualElements DisplayName="TweetWrap" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="TweetWrap" BackgroundColor="#139ae9">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="TweetWrap">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#139ae9" />
       </uap:VisualElements>
