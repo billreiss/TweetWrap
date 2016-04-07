@@ -37,6 +37,12 @@ namespace TweetWrap.Views
             coreTitleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;
             Window.Current.SetTitleBar(mainTitleBar);
+            coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
+        }
+
+        private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            ResizeWebView();
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
