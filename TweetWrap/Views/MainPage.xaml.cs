@@ -103,5 +103,16 @@ namespace TweetWrap.Views
                 });
             }
         }
+
+        public ICommand Privacy
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    await Windows.System.Launcher.LaunchUriAsync(new Uri("http://myapppolicy.com/app/tweetwrap", UriKind.Absolute));
+                });
+            }
+        }
     }
 }

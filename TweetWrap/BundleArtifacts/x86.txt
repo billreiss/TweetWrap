@@ -1,0 +1,2 @@
+MainPackage=C:\Users\bireis\Documents\Visual Studio 2015\Projects\TweetWrap\TweetWrap\bin\x86\Release\TweetWrap_1.1.4.0_x86.appx
+SymbolPackage=C:\Users\bireis\Documents\Visual Studio 2015\Projects\TweetWrap\TweetWrap\AppPackages\TweetWrap_1.1.4.0_Test\TweetWrap_1.1.4.0_x86.appxsym

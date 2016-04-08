@@ -1,0 +1,3 @@
+MainPackage=C:\Users\bireis\Documents\Visual Studio 2015\Projects\TweetWrap\TweetWrap\bin\x64\Release\Upload\TweetWrap_1.1.4.0_x64.appx
+SymbolPackage=C:\Users\bireis\Documents\Visual Studio 2015\Projects\TweetWrap\TweetWrap\AppPackages\TweetWrap_1.1.4.0\TweetWrap_1.1.4.0_x64.appxsym
+ResourcePack=C:\Users\bireis\Documents\Visual Studio 2015\Projects\TweetWrap\TweetWrap\_scale-100.appx

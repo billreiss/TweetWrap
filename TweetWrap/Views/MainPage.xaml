@@ -48,11 +48,12 @@
                         <MenuFlyout.Items>
                             <controls:ZoomMenuFlyoutItem Width="250" Text="Zoom" Zoom="{x:Bind Model.Zoom, Mode=TwoWay}"/>
                             <MenuFlyoutItem Text="Refresh" Command="{x:Bind Refresh}"/>
+                            <MenuFlyoutItem Text="Privacy" Command="{x:Bind Privacy}"/>
                             <MenuFlyoutItem Text="About" Command="{x:Bind About}"/>
                         </MenuFlyout.Items>
                     </MenuFlyout>
                 </Button.Flyout>
-                <SymbolIcon Symbol="Setting"/>
+                <SymbolIcon Symbol="More"/>
 
             </Button>
         </Grid>
