@@ -70,11 +70,15 @@ namespace TweetWrap.Views
             var rightInset = coreTitleBar.SystemOverlayRightInset;
             titleRoot.ColumnDefinitions[2].Width = new GridLength(rightInset);
             layoutRoot.RowDefinitions[0].Height = new GridLength(tbHeight);
-            var wvHeight = this.ActualHeight - tbHeight;
-            MyWebView.Width = this.ActualWidth / Model.Zoom;
-            MyWebView.Height = wvHeight / Model.Zoom;
-            scale.ScaleX = Model.Zoom;
-            scale.ScaleY = Model.Zoom;
+            var wvHeight = dummyGrid.ActualHeight;
+            var wvWidth = dummyGrid.ActualWidth;
+            // HACK: I see a strange scaling issue when scale is exactly .8, so let's 
+            // subtract .01 always before calculating scale. Seems to fix it, don't know why.
+            var zoom = Model.Zoom - .01;
+            scale.ScaleX = zoom;
+            scale.ScaleY = zoom;
+            webViewContainer.Height = wvHeight / zoom;
+            webViewContainer.Width = wvWidth / zoom;
         }
 
         private void WebView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args)

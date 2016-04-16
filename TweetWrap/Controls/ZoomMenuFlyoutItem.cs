@@ -17,6 +17,7 @@ namespace TweetWrap.Controls
     {
         Button zoomInButton;
         Button zoomOutButton;
+        double zoomIncrement = .05d;
 
         public ZoomMenuFlyoutItem()
         {
@@ -66,7 +67,7 @@ namespace TweetWrap.Controls
         {
             if (Zoom >= .2)
             {
-                Zoom -= .1d;
+                Zoom = Add(Zoom, -zoomIncrement);
             }
         }
 
@@ -74,8 +75,13 @@ namespace TweetWrap.Controls
         {
             if (Zoom < 3)
             {
-                Zoom += .1d;
+                Zoom = Add(Zoom, zoomIncrement);
             }
+        }
+
+        private double Add(double zoom, double zoomIncrement)
+        {
+            return Math.Round((zoom + zoomIncrement) * 100) / 100;
         }
     }
 }

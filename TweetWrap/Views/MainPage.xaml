@@ -18,12 +18,15 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
+        <Grid x:Name="dummyGrid" Grid.Row="1"  Grid.ColumnSpan="2"/>
         <Canvas Grid.Row="1"  Grid.ColumnSpan="2">
-            <WebView x:Name="MyWebView" Source="https://tweetdeck.twitter.com" FrameNavigationStarting="WebView_NavigationStarting" NavigationStarting="WebView_NavigationStarting" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <WebView.RenderTransform>
-                    <ScaleTransform x:Name="scale" ScaleX="{x:Bind Model.Zoom, Mode=OneWay}" ScaleY="{x:Bind Model.Zoom, Mode=OneWay}"/>
-                </WebView.RenderTransform>
-            </WebView>
+            <Grid x:Name="webViewContainer" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.RenderTransform>
+                    <ScaleTransform x:Name="scale" ScaleX="1" ScaleY="1"/>
+                </Grid.RenderTransform>
+                <WebView x:Name="MyWebView" Source="https://tweetdeck.twitter.com" FrameNavigationStarting="WebView_NavigationStarting" NavigationStarting="WebView_NavigationStarting">
+                </WebView>
+            </Grid>
         </Canvas>
         <Grid x:Name="titleRoot" Grid.ColumnSpan="2" Background="Transparent">
             <Grid.ColumnDefinitions>
