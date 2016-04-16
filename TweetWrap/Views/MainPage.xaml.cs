@@ -31,7 +31,7 @@ namespace TweetWrap.Views
         public MainPage()
         {
             this.InitializeComponent();
-            this.SizeChanged += MainPage_SizeChanged;
+            dummyGrid.SizeChanged += dummyGrid_SizeChanged;
             Model.PropertyChanged += Model_PropertyChanged;
             this.Loaded += MainPage_Loaded;
             coreTitleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
@@ -58,7 +58,7 @@ namespace TweetWrap.Views
             }
         }
 
-        private void MainPage_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void dummyGrid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             ResizeWebView();
         }
